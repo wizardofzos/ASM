@@ -1,0 +1,10 @@
+         IEFBR14 START
+                 USING IEFBR14,15  Establish addressability
+                 B     GO          Skip over our name
+                 DC    AL1(L'ID)   Length of name
+         ID      DC    C'IEFBR14'  Name itself
+                 DS    0H          Force alignment
+         GO      SR    15,15       Zero out register 15
+                 BR    14          Return addr in R14 -- branch at it
+                 END   IEFBR14
+
